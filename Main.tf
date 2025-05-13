@@ -31,9 +31,9 @@ resource "aws_security_group" "Jenkins-sg" {
 
 
 resource "aws_instance" "web" {
-  ami                    = "ami-03f4878755434977f"
+  ami                    = "ami-0e35ddab05955cf57"
   instance_type          = "t2.medium"
-  key_name               = "mumbai"
+  key_name               = "dev123"
   vpc_security_group_ids = [aws_security_group.Jenkins-sg.id]
   user_data              = templatefile("./install_jenkins.sh", {})
 
